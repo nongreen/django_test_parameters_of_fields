@@ -1,6 +1,10 @@
+import sys
+
+sys.path.append("../../../src/expected_model")
+
 from django.test import TestCase
 
-from django_test_parameters_of_models import expected_model
+from expected_model import expected_model
 from .models import TestModel
 
 
