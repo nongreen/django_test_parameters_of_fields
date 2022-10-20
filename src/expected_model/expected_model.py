@@ -16,7 +16,7 @@ class ExpectedModel:
         if isinstance(other, models.Model):
             self_fields_names = list(self.__class__.__dict__.keys())
             self_fields_names = list(filter(
-                lambda f: not f[:2] == "__", self_fields_names))
+                lambda f: "__" not in f, self_fields_names))
 
             for field_name in self_fields_names:
                 expected_parameters = getattr(self, field_name)
@@ -29,6 +29,7 @@ class ExpectedModel:
                     return False
 
             return True
+
 
     @classmethod
     def _compare_expected_parameters_with_real(
@@ -46,7 +47,7 @@ class ExpectedModel:
         """
         for parameter_name, expected_value in expected_parameters.items():
             real_parameter_value = getattr(compared_field, parameter_name)
-            if real_parameter_value != expected_parameters:
+            if real_parameter_value != expected_value:
                 return False
 
         return True
