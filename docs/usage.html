@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Usage</title>
+</head>
+<body>
+    <h1 id="usage">Usage</h1>
+        <ul>
+            <li>Create ExpectedModel with parameters of fields like dictionaries. Example <code>id = {&quot;primary_key&quot;: True}</code>, where <code>id</code>
+            is name in tested model, <code>&quot;primary_key&quot;</code> is tested parameter, <code>True</code> is expected value of parameter</li>
+            <li>Create test with compare ExpectedModel with TestedModel like <code>ExpectedModel() == TestedModel()</code>. <p style="color: blue">Important: compare must not to be <code>TestedModel() == ExpectedModel()</code></p><br><br/></li>
+        </ul>
+    <h2 id="usage-with-constants">Usage with constants</h2>
+    <p>If model have constants, in <code>ExpectedModel</code> need use <code>__CONSTANT_NAME</code>.</p>
+    <h1 id="example">Example</h1>
+    <pre><code class="lang-python"><span class="hljs-keyword">from</span> django.test <span class="hljs-keyword">import</span> TestCase
+
+    <span class="hljs-keyword">from</span> django.db <span class="hljs-keyword">import</span> models
+    <span class="hljs-keyword">from</span> django_test_parameters_of_fields <span class="hljs-keyword">import</span> expected_model
+
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExampleModel</span><span class="hljs-params">(models.Model)</span>:</span>
+        EXAMPLE_CONSTANT = <span class="hljs-number">3</span>
+        id = models.BigAutoField(primary_key=<span class="hljs-keyword">True</span>)
+
+        example_char_field = models.CharField(
+            max_length=<span class="hljs-number">100</span>,
+            verbose_name=<span class="hljs-string">"sdf"</span>,
+        )
+
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExpectedModelForExample</span><span class="hljs-params">(expected_model.ExpectedModel)</span>:</span>
+        __EXAMPLE_CONSTANT
+        id = { <span class="hljs-string">"primary_key"</span>: <span class="hljs-keyword">True</span> }
+
+        example_char_field = {
+            <span class="hljs-string">"max_length"</span>: <span class="hljs-number">100</span>,
+            <span class="hljs-string">"verbose_name"</span>: <span class="hljs-string">"sdf"</span>
+        }
+
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExampleTest</span><span class="hljs-params">(TestCase)</span>:</span>
+        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_compare_example_model_with_expected</span><span class="hljs-params">(self)</span>:</span>
+            self.assertTrue(
+                ExampleModel() == ExpectedModelForExample(),
+                msg=<span class="hljs-string">"Some message"</span>
+            )
+    </code></pre>
+</body>
+</html>
