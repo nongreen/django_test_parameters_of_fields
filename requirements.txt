@@ -4,3 +4,4 @@ pip==22.3
 setuptools==60.2.0
 sqlparse==0.4.3
 wheel==0.37.1
+-e git+https://github.com/nongreen/django_test_parameters_of_model@7c98776918628345677a2c9c0e4a58758cd7dfbd#egg=django_test_parameters_of_models

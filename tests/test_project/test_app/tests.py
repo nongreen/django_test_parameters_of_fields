@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from src.expected_model import expected_model
+from django_test_parameters_of_models import expected_model
 from .models import TestModel
 
 
