@@ -8,6 +8,24 @@
     <h1 id="django_test_parameters_of_model">django_test_parameters_of_model</h1>
     <p>Module for simple test parameters of model fields. It compares values of field parameters with expected.
     It needs for avoid random changes of parameters.</p>
-    <p><a href="usage.html">Usage</a></p>
+    <h1 id="installation">Installation</h1>
+    <h3 id="for-using-">For using:</h3>
+    <ul>
+    <li>Download <a href="https://github.com/nongreen/django_test_parameters_of_fields/raw/master/dist/django_test_parameters_of_models-1.0.0-py3-none-any.whl">wheel package</a></li>
+    <li>If you use virtualenv, you need select needed environment by <code>virtualenv local name_your_env</code></li>
+    <li>Run command <code>python3 -m pip install path_to_wheel_package</code></li>
+    </ul>
+    <h3 id="for-development-">For development:</h3>
+    <ul>
+    <li>Clone it repo by <code>git clone https://github.com/nongreen/django_test_parameters_of_fields</code></li>
+    <li>Change directory to tests/test_project/</li>
+    <li>Run commands:<ul>
+    <li><code>python manage.py makemigrations</code></li>
+    <li><code>python manage.py sqlmigrate test_app 0001</code></li>
+    <li><code>python manage.py migrate</code></li>
+    </ul>
+    </li>
+    </ul>
+    <a href="usage.html"><h2>Usage</h2></a>
 </body>
 </html>

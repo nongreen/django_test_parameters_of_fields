@@ -7,6 +7,7 @@
 <body>
     <h1 id="usage">Usage</h1>
         <ul>
+            <li>Import module by <code>from expected_model import expected_model</code></li>
             <li>Create ExpectedModel with parameters of fields like dictionaries. Example <code>id = {&quot;primary_key&quot;: True}</code>, where <code>id</code>
             is name in tested model, <code>&quot;primary_key&quot;</code> is tested parameter, <code>True</code> is expected value of parameter</li>
             <li>Create test with compare ExpectedModel with TestedModel like <code>ExpectedModel() == TestedModel()</code>. <p style="color: blue">Important: compare must not to be <code>TestedModel() == ExpectedModel()</code></p><br><br/></li>
