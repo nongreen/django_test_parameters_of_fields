@@ -27,4 +27,4 @@ It needs for avoid random changes of parameters.
 is name in tested model, `"primary_key"` is tested parameter, `True` is expected value of parameter
 - Create test with compare ExpectedModel with TestedModel like `ExpectedModel() == TestedModel()`. <p style="color: blue">Important: compare must not to be `TestedModel() == ExpectedModel()`</p>  
 <br/>
-More about it in [docs/example.py](https://github.com/nongreen/django_test_parameters_of_fields/blob/master/docs/example.py)
+More about it in `docs/example.py`
