@@ -25,6 +25,6 @@ class ExpectedModelForExample(expected_model.ExpectedModel):
 class ExampleTest(TestCase):
     def test_compare_example_model_with_expected(self):
         self.assertTrue(
-            ExampleModel() == ExpectedModelForExample(),
+            ExpectedModelForExample() == ExampleModel()
             msg="Some message"
         )
