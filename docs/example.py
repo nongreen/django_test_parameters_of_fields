@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 from django.db import models
-from django_test_parameters_of_fields import expected_model
+from expected_model import expected_model
 
 
 class ExampleModel(models.Model):
