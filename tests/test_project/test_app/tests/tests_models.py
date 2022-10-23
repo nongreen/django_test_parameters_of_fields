@@ -1,7 +1,7 @@
 from django.test import TestCase
-
 from expected_model import expected_model
-from .models import TestModel
+
+from tests.test_project.test_app.models import TestModel
 
 
 # Create your tests here.

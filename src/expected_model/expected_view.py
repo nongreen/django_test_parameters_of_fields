@@ -10,7 +10,7 @@ class ExpectedView:
     def __eq__(self, other):
         """
         Compare expected view with real
-        
+
         :return : True, if all fields values of real view equal expected else
         return False
         """

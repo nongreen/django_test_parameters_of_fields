@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "django_test_parameters_of_models"
-version = "1.0.0"
+version = "1.0.1"
 authors = [
   { name="nongreen", email="pnikita1405@mail.ru" },
 ]
