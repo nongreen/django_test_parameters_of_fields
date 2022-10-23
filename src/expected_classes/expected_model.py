@@ -30,7 +30,6 @@ class ExpectedModel:
 
             return True
 
-
     @classmethod
     def _compare_expected_parameters_with_real(
             cls, expected_parameters: dict,
